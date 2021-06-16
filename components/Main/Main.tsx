@@ -4,7 +4,7 @@ import styles from "./Main.module.css";
 
 const Main: React.FunctionComponent = () => {
   return (
-    <main className={styles.main}>
+    <main data-testid="main-testid" className={styles.main}>
       Hello there!
       <span className={styles.logo}>
         <Image

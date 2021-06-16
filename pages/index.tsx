@@ -6,7 +6,7 @@ import styles from "../styles/Home.module.css";
 
 const Home: React.FunctionComponent = () => {
   return (
-    <div className={styles.container}>
+    <div data-testid="home-testid" className={styles.container}>
       <Header />
       <Main />
       <Footer />
