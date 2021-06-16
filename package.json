@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "test": "npm run prettier -- --check && npm run eslint && npm run jest && npm run jest -- --coverage",
     "eslint": "npx eslint --ext .js,.jsx,.ts,.tsx .",
     "prettier": "npx prettier \"./**/*.{js,jsx,ts,tsx}\"",
     "jest": "npx jest",
