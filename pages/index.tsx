@@ -1,8 +1,8 @@
-import React from 'react'
-import Header from '../components/Header/Header'
-import Main from '../components/Main/Main'
-import Footer from '../components/Footer/Footer'
-import styles from '../styles/Home.module.css'
+import React from "react";
+import Header from "../components/Header/Header";
+import Main from "../components/Main/Main";
+import Footer from "../components/Footer/Footer";
+import styles from "../styles/Home.module.css";
 
 const Home: React.FunctionComponent = () => {
   return (
@@ -11,7 +11,7 @@ const Home: React.FunctionComponent = () => {
       <Main />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default Home;
