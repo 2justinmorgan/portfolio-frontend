@@ -1,5 +1,7 @@
 import React from "react";
 import Head from "next/head";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 
@@ -8,7 +10,7 @@ const MyApp: React.FunctionComponent<AppProps> = ({
   pageProps,
 }: AppProps) => {
   return (
-    <>
+    <div data-testid="myapp-testid">
       <Head>
         <title>www.JustinLeeMorgan.com</title>
         <meta
@@ -17,8 +19,10 @@ const MyApp: React.FunctionComponent<AppProps> = ({
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <Component {...pageProps} />
-    </>
+      <Footer />
+    </div>
   );
 };
 

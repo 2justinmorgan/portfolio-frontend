@@ -29,10 +29,7 @@ const Header: React.FunctionComponent = () => {
         </Toolbar>
       </AppBar>
       {showNavMenu && (
-        <NavMenu
-          isOpen={showNavMenu}
-          toggleOpen={toggleShowNavMenu}
-        />
+        <NavMenu isOpen={showNavMenu} toggleOpen={toggleShowNavMenu} />
       )}
     </div>
   );
