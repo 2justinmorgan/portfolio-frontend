@@ -27,7 +27,11 @@ const NavMenu: React.FunctionComponent<NavMenuPropsT> = (props) => {
         <List>
           {views.map((text, index) => (
             <Link href={"/" + text.toLowerCase()} key={index}>
-              <ListItem button key={text}>
+              <ListItem
+                button
+                key={text}
+                onClick={() => setTimeout(() => toggleOpen(false), 200)}
+              >
                 <ListItemIcon>
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                 </ListItemIcon>

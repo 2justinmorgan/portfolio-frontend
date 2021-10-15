@@ -28,9 +28,7 @@ const Header: React.FunctionComponent = () => {
           </div>
         </Toolbar>
       </AppBar>
-      {showNavMenu && (
-        <NavMenu isOpen={showNavMenu} toggleOpen={toggleShowNavMenu} />
-      )}
+      <NavMenu isOpen={showNavMenu} toggleOpen={toggleShowNavMenu} />
     </div>
   );
 };
