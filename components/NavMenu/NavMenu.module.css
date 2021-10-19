@@ -1,0 +1,10 @@
+.title {
+    margin: 20px 0 6px 30px;
+}
+
+.closebtn {
+    padding-left: 7px;
+    cursor: pointer;
+    bottom: 2px;
+    position: relative;
+}
