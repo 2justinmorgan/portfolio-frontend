@@ -13,16 +13,18 @@ const Header: React.FunctionComponent = () => {
     <div data-testid="header-testid">
       <AppBar position="static" style={{ backgroundColor: "#c3c3c3" }}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            onClick={() => toggleShowNavMenu(!showNavMenu)}
-          >
-            <MenuIcon />
-          </IconButton>
+          <div data-testid="burger-testid" show-menu={`visible-${showNavMenu}`}>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+              onClick={() => toggleShowNavMenu(!showNavMenu)}
+            >
+              <MenuIcon />
+            </IconButton>
+          </div>
           <div style={{ paddingTop: "5px" }}>
             <Logo />
           </div>

@@ -27,33 +27,35 @@ const NavMenu: React.FunctionComponent<NavMenuPropsT> = (props) => {
 
   return (
     <Drawer open={isOpen} onClose={() => toggleOpen(false)}>
-      <h3 className={styles.title}>
-        Site Navigation
-        <span className={styles.closebtn}>
-          <IconButton onClick={() => toggleOpen(false)}>
-            <ChevronLeftIcon />
-          </IconButton>
-        </span>
-      </h3>
-      <Divider />
-      <Box sx={{ width: "210px" }} role="presentation">
-        <List>
-          {views.map((text, index) => (
-            <Link href={"/" + text.toLowerCase()} key={index}>
-              <ListItem
-                button
-                key={text}
-                onClick={() => setTimeout(() => toggleOpen(false), 200)}
-              >
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            </Link>
-          ))}
-        </List>
-      </Box>
+      <div data-testid="navmenu-testid">
+        <h3 className={styles.title}>
+          Site Navigation
+          <span className={styles.closebtn} data-testid="closechevron-testid">
+            <IconButton onClick={() => toggleOpen(false)}>
+              <ChevronLeftIcon />
+            </IconButton>
+          </span>
+        </h3>
+        <Divider />
+        <Box sx={{ width: "210px" }} role="presentation">
+          <List>
+            {views.map((text, index) => (
+              <Link href={"/" + text.toLowerCase()} key={index}>
+                <ListItem
+                  button
+                  key={text}
+                  onClick={() => setTimeout(() => toggleOpen(false), 200)}
+                >
+                  <ListItemIcon>
+                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  </ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItem>
+              </Link>
+            ))}
+          </List>
+        </Box>
+      </div>
     </Drawer>
   );
 };
