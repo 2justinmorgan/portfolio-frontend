@@ -1,17 +1,36 @@
 import React from "react";
-import Head from "next/head";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import Logo from "../Logo/Logo";
+import NavMenu from "../NavMenu/NavMenu";
 
 const Header: React.FunctionComponent = () => {
+  const [showNavMenu, toggleShowNavMenu] = React.useState(false);
+
   return (
     <div data-testid="header-testid">
-      <Head>
-        <title>www.JustinLeeMorgan.com</title>
-        <meta
-          name="description"
-          content="The porfolio site of Justin Lee Morgan"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <AppBar position="static" style={{ backgroundColor: "#c3c3c3" }}>
+        <Toolbar>
+          <div data-testid="burger-testid" show-menu={`visible-${showNavMenu}`}>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+              onClick={() => toggleShowNavMenu(!showNavMenu)}
+            >
+              <MenuIcon />
+            </IconButton>
+          </div>
+          <div style={{ paddingTop: "5px" }}>
+            <Logo />
+          </div>
+        </Toolbar>
+      </AppBar>
+      <NavMenu isOpen={showNavMenu} toggleOpen={toggleShowNavMenu} />
     </div>
   );
 };

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "test": "npm run prettier -- --check && npm run eslint && npm run jest && npm run jest -- --coverage",
+    "test": "npm run prettier -- --check && npm run eslint && npm run jest -- --coverage",
     "eslint": "npx eslint --ext .js,.jsx,.ts,.tsx .",
     "prettier": "npx prettier \"./**/*.{js,jsx,ts,tsx}\"",
     "jest": "npx jest",
@@ -12,7 +12,12 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "10.2.3",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@mui/icons-material": "^5.0.1",
+    "@mui/material": "^5.0.2",
+    "next": "^11.1.2",
+    "prop-types": "^15.7.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
