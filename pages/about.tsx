@@ -1,9 +1,10 @@
 import React from "react";
+import Paragraph from "../components/Paragraph/Paragraph";
 
 const About: React.FunctionComponent = () => {
   return (
     <>
-      <p>
+      <Paragraph>
         Hello! Thanks for checking out my web app. I hope it represents my
         passion for computer science to the point that YOU feel encouraged to
         work with me. I studied business as an undergradate student and found
@@ -16,7 +17,7 @@ const About: React.FunctionComponent = () => {
         </a>
         . Since graduation, I have thoroughly enjoyed studying engineering math
         and computer sciences.
-      </p>
+      </Paragraph>
       <strong>
         I would be delighted to talk with you about career opportunities and/or
         anything else that comes to mind!
