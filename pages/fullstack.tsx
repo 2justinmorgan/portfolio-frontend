@@ -1,11 +1,8 @@
 import React from "react";
 import Paragraph from "../components/Paragraph/Paragraph";
 import Title from "../components/Title/Title";
+import Strike from "../components/Strike/Strike";
 import Link from "next/link";
-
-const strike = (content: JSX.Element): JSX.Element => (
-  <span style={{ textDecoration: "line-through" }}>{content}</span>
-);
 
 const link = (text: string): JSX.Element => (
   <Link href={"/" + text.toLowerCase()}>
@@ -22,15 +19,13 @@ const Fullstack: React.FunctionComponent = () => {
         <Title>This App</Title>
         JustinLeeMorgan.com is a Python Flask app, with a React JavaScript front
         end, served by Apache via WSGI.
-        {strike(
-          <>
-            The web app is hosted on a Raspberry Pi, running Arch Linux ARM OS,
-            and connected to the network by redirecting ports through a home
-            router.
-          </>
-        )}
+        <Strike>
+          The web app is hosted on a Raspberry Pi, running Arch Linux ARM OS,
+          and connected to the network by redirecting ports through a home
+          router.
+        </Strike>
         The DNS, administered by GoDaddy, forwards all domain requests to
-        {strike(<>the home router&apos;s IP address.</>)}
+        <Strike>the home router&apos;s IP address.</Strike>
       </Paragraph>
       <Paragraph padding={{ top: 0, right: 40, bottom: 20, left: 40 }}>
         <Title>Update</Title>
