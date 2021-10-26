@@ -2,15 +2,7 @@ import React from "react";
 import Paragraph from "../components/Paragraph/Paragraph";
 import Title from "../components/Title/Title";
 import Strike from "../components/Strike/Strike";
-import Link from "next/link";
-
-const link = (text: string): JSX.Element => (
-  <Link href={"/" + text.toLowerCase()}>
-    <a>
-      <b>{text}</b>
-    </a>
-  </Link>
-);
+import Link from "../components/Link/Link";
 
 const Fullstack: React.FunctionComponent = () => {
   return (
@@ -36,13 +28,9 @@ const Fullstack: React.FunctionComponent = () => {
         <Title>Web Scraping</Title>
         Static content was scraped from web pages using the Python request
         library,{" "}
-        <a
-          href="https://docs.python-requests.org/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <b>requests</b>
-        </a>
+        <Link uri="https://docs.python-requests.org/" isExternal={true}>
+          requests
+        </Link>
         . Because this server is limited to a single core processor using 1GB of
         memory, a web browser based driver is far too heavy for viewing JS
         mutated DOMs. This is why scraping is currently limited to only static
@@ -52,10 +40,11 @@ const Fullstack: React.FunctionComponent = () => {
       <Paragraph>
         <Title>Database</Title>
         This app&apos;s server has a database of international locations (see
-        the {link("Database")} page). The server uses CentOS&apos;s RDBMS
-        implementation of MySQL, MariaDB. All of the location data was gathered
-        by using various APIs and web scrapers. For more information about the
-        database, please contact me (see the {link("Links")} page).
+        the <Link uri="database">Database</Link> page). The server uses
+        CentOS&apos;s RDBMS implementation of MySQL, MariaDB. All of the
+        location data was gathered by using various APIs and web scrapers. For
+        more information about the database, please contact me (see the{" "}
+        <Link uri="links">Links</Link> page).
       </Paragraph>
     </>
   );
